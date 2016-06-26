@@ -15,7 +15,7 @@
   "moduleType": [],
   "homepage": "https://alexmingoia.github.io/purescript-pux",
   "dependencies": {
-    "purescript-css": "^0.6.0",
-    "purescript-pux": "^4.0.0"
+    "purescript-css": "slamdata/purescript-css#3fe427e",
+    "purescript-pux": "^5.0.1"
   }
 }
