@@ -3,12 +3,12 @@ module Pux.CSS (module CSS, css, style) where
 import CSS as CSS
 import CSS.Overflow as CSS
 import CSS.TextAlign as CSS
-import CSS.Stylesheet (CSS, Rule(Property), runS)
 import CSS.Render (collect)
+import CSS.Stylesheet (CSS, Rule(Property), runS)
 import Data.Either (either)
 import Data.Foldable (foldl)
 import Data.Monoid (mempty)
-import Data.String (drop, joinWith, split, take, toUpper, toLower)
+import Data.String (Pattern(Pattern), drop, joinWith, split, take, toUpper, toLower)
 import Data.Tuple (Tuple(Tuple))
 import Prelude (($), (<>), map)
 import Pux.Html (Attribute)
@@ -28,5 +28,5 @@ css rules =
 camelCase :: String -> String
 camelCase str = toLower (take 1 pascalCase) <> (drop 1 pascalCase)
   where
-  pascalCase = joinWith "" $ map capitalize (split "-" str)
+  pascalCase = joinWith "" $ map capitalize (split (Pattern "-") str)
   capitalize word = toUpper (take 1 word) <> (drop 1 word)
